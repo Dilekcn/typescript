@@ -42,3 +42,59 @@ var Direction2;
 console.log(Direction2.Up);
 console.log(Direction2.Down);
 console.log(Direction2.Left);
+// const user:{
+//     id:number,
+//     name:string
+// } = {
+//     id:1,
+//     name:'Dilek'
+// }
+const user = {
+    id: 1,
+    name: 'Ipek'
+};
+//Type Assertion
+let cid = 1;
+// let custemerId = <number>cid
+let custemerId = cid;
+//Functon
+function addNum(x, y) {
+    return x + y;
+}
+console.log(addNum(5, 5));
+//void
+function log(message) {
+    console.log(message);
+}
+log('Hello');
+const user1 = {
+    id: 1,
+    name: 'Ipek'
+};
+const add = (x, y) => x + y;
+const sub = (x, y) => x - y;
+//Classes
+class Person {
+    //     constructor(){
+    // console.log(123)
+    //     }
+    // }
+    constructor(id, name) {
+        this.id = id;
+        this.name = name;
+    }
+    register() {
+        return `${this.name} is now registered`;
+    }
+}
+const brand = new Person(2, 'Melek');
+const mike = new Person(3, 'Sertug');
+console.log(brand, mike);
+class Employee extends Person {
+    constructor(id, name, position) {
+        super(id, name);
+        this.position = position;
+    }
+}
+const emp = new Employee(3, 'Abd', 'Developer');
+console.log(emp.name);

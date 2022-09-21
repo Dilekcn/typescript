@@ -68,4 +68,94 @@ const user:User = {
     name:'Ipek'
 }
 
+//Type Assertion
 
+let cid: any =1
+// let custemerId = <number>cid
+let custemerId = cid as number
+
+
+//Functon
+
+function addNum(x: number, y:number):number{
+    return x + y
+}
+console.log(addNum(5,5))
+
+
+//void
+
+function log(message: string | number):void {
+    console.log(message)
+}
+
+log('Hello')
+
+
+//Inter faces
+interface UserInterface{
+    id:number,
+    name:string,
+    age?:number   // ? the mean optional
+}
+
+const user1:UserInterface = {
+    id:1,
+    name:'Ipek'
+}
+
+interface MathFunc {
+    (x:number, y:number):number
+}
+
+const add: MathFunc = (x:number, y:number): number => x+y
+const sub: MathFunc = (x:number, y:number): number => x-y
+
+
+interface PersonInterface {
+    id:number
+    name:string
+    register():string
+}
+
+//Classes
+
+class Person implements PersonInterface{
+    id:number
+    name:string
+
+//     constructor(){
+// console.log(123)
+//     }
+// }
+
+constructor(id:number, name:string){
+    this.id =id
+    this.name = name
+  
+        }
+        register(){
+            return `${this.name} is now registered`
+            
+        }
+    }
+
+const brand = new Person(2, 'Melek')
+const mike = new Person(3, 'Sertug')
+
+console.log(brand,  mike)
+
+//Subclasses
+class Employee extends Person {
+    position: string
+
+    constructor(id:number, name:string, position:string){
+        super(id, name)
+        this.position =position
+
+    }
+}
+
+const emp = new Employee(3, 'Abd', 'Developer')
+
+console.log(emp.name)
