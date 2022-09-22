@@ -90,6 +90,7 @@ class Person {
 const brand = new Person(2, 'Melek');
 const mike = new Person(3, 'Sertug');
 console.log(brand, mike);
+//Subclasses
 class Employee extends Person {
     constructor(id, name, position) {
         super(id, name);
@@ -98,3 +99,11 @@ class Employee extends Person {
 }
 const emp = new Employee(3, 'Abd', 'Developer');
 console.log(emp.name);
+//Generic
+function getArray(item) {
+    return new Array().concat(item);
+}
+let numarray = getArray([1, 2, 3, 4]);
+let strArray = getArray(['Ayse', 'Fatma', 'Kim']);
+numarray.push('Hello');
+console.log(numarray);
